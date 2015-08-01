@@ -82,4 +82,14 @@ class PhraseTest < Minitest::Test
     }
     assert_equal counts, phrase.word_count
   end
+
+  def test_with_quotations
+    skip
+    phrase = Phrase.new("Jason said, 'I'm happy. You're happy.'")
+    counts = {
+      'jason' => 1, 'said' => 1, "i'm" => 1,
+      'happy' => 2, "you're" => 1
+    }
+    assert_equel counts, phrase.word_count
+  end
 end
