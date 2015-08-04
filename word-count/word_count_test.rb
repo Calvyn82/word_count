@@ -85,10 +85,10 @@ class PhraseTest < Minitest::Test
 
   def test_with_quotations
     skip
-    phrase = Phrase.new("Jason said, 'I'm happy. You're happy.'")
+    phrase = Phrase.new("Joe can't tell between 'large' and large.")
     counts = {
-      'jason' => 1, 'said' => 1, "i'm" => 1,
-      'happy' => 2, "you're" => 1
+      'Joe' => 1, "can't" => 1, 'tell' => 1,
+      'between' => 1, 'large' => 2, 'and' => 1
     }
     assert_equel counts, phrase.word_count
   end
